@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/practice', function() {
+    echo "Hello World!";
+});
+
+
+// Route::get('/books', 'BookController@getIndex');
+// Route::get('/books/show/{title}', 'BookController@getShow');
+// Route::get('/books/create', 'BookController@getCreate');
+// Route::post('/books/create', 'BookController@postCreate');
+#Route::get('/books/foo', 'BookController@bar');
+Route::controller('/books','BookController');
+Route::get('/practice', function() {
+    echo config('app.debug');
+});
