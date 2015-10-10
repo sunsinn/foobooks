@@ -24,8 +24,16 @@ Route::get('/practice', function() {
 // Route::get('/books/show/{title}', 'BookController@getShow');
 // Route::get('/books/create', 'BookController@getCreate');
 // Route::post('/books/create', 'BookController@postCreate');
-#Route::get('/books/foo', 'BookController@bar');
+
 Route::controller('/books','BookController');
+Route::get('/books/show/{title?}', 'BookController@getShow');
 Route::get('/practice', function() {
     echo config('app.debug');
+});
+
+Route::get('/practice', function() {
+
+    $random = new Rych\Random\Random();
+    return $random->getRandomString(8);
+
 });
