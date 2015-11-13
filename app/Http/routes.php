@@ -15,21 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/practice', function() {
-    echo "Hello World!";
-});
-
-
-// Route::get('/books', 'BookController@getIndex');
-// Route::get('/books/show/{title}', 'BookController@getShow');
-// Route::get('/books/create', 'BookController@getCreate');
-// Route::post('/books/create', 'BookController@postCreate');
-
-Route::controller('/books','BookController');
+# Reminder: 5 Route methods are: get, post, put, delete, or all
+/*----------------------------------------------------
+/books
+-----------------------------------------------------*/
+Route::get('/', 'BookController@getIndex');
+Route::get('/books', 'BookController@getIndex');
 Route::get('/books/show/{title?}', 'BookController@getShow');
-Route::get('/practice', function() {
-    echo config('app.debug');
-});
+Route::get('/books/create', 'BookController@getCreate');
+Route::post('/books/create', 'BookController@postCreate');
+Route::get('/books/edit/{id?}', 'BookController@getEdit');
+Route::post('/books/edit', 'BookController@postEdit');
+
 
 Route::get('/practice', function() {
 
