@@ -75,7 +75,7 @@ class BookController extends Controller {
         // Code here to enter book into the database
         $book = new \App\Book();
         $book->title = $request->title;
-        $book->author = $request->author;
+        //$book->author = $request->author;
         $book->author_id = 1;
         $book->cover = $request->cover;
         $book->published = $request->published;
