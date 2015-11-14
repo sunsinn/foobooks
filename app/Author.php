@@ -11,3 +11,5 @@ class Author extends Model
     # Define a one-to-many relationship.
     return $this->hasMany('\App\Book');
 }
+
+}
